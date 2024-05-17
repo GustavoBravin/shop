@@ -1,0 +1,21 @@
+.main{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 50px;
+}
+
+
+.card{
+display: flex;
+flex-direction: column;
+width: 400px;
+height: 200px;
+background-color: aqua;
+border-radius: 25px;
+align-items: center;
+}
+
+
