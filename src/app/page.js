@@ -1,25 +1,9 @@
-import Image from "next/image";
-import style from "./page.module.css"
 
+import Main from "./componentes/main"
 
-export default async function Home() {
-
-    const response = await fetch("https://fakestoreapi.com/products")
-    const data = await response.json();
-
+export default function Home() {
   return (
-    <main className={style.main}>
-      {data.map((products) =>
-      <div className={style.card} key={products.id}>
-        <p>{products.title}</p>
-        <Image 
-        width={100}
-        height={100} 
-        src={products.image} 
-        />
-      </div>
-      
-      )}
-    </main>
+    <Main/>
+  
   );
 }
