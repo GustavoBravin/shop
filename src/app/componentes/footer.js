@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className={styles.rodape}>
             <h1></h1>
             <ul>
-                <h2>redes sociais:</h2>
+                <h2>Redes Sociais</h2>
                 <li className={styles.lista}>
                     <Image
                         width={30}
@@ -34,7 +34,7 @@ export default function Footer() {
             <p>Data de criação: 24/06/2007</p>
             <Image
                 className={styles.logo}
-                width={100}
+                width={150}
                 height={100}
                 src={Logo} />
         </footer>

@@ -1,6 +1,5 @@
 import Footer from "./componentes/footer"
 import Header from "./componentes/header"
-import Image from "next/image"
 
 export const metadata = {
   title: "Meu Shop.com",
