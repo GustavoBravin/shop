@@ -2,16 +2,23 @@
 import { useEffect, useState } from "react";
 import Image from "next/image"
 import styles from "./main.module.css"
+import ErrorGetData from "./ErrorGetData";
+import Link from "next/link";
 export default function Main() {
     const [listaProdutos, setListaProdutos]= useState([]);
     const [listaComplete, setListaCompleta]= useState([]);
     const [search,setSearch] = useState("");
+    const [errorfetch,setErrorFetch] = useState(false)
     useEffect(() => {
         const getProdutos = async () => {
+            try{
             const response = await fetch("https://fakestoreapi.com/products");
             const data = await response.json();
             setListaCompleta(data);
             setListaProdutos(data);
+            }catch{
+                setErrorFetch(true);
+            };
         }
         getProdutos();
     }, []);
@@ -60,9 +67,17 @@ export default function Main() {
          setListaProdutos(newList);
          console.log(newList)
     }
+    if(errorfetch == true){
+        return <ErrorGetData/>
+    }
+    if(listaProdutos[0] == null){
+        return <center></center>
+    }
 
+    const Ver = (id) => {
+    
 
-
+    }
 
 
 
@@ -94,6 +109,7 @@ export default function Main() {
                         width={100}
                         height={100}
                         src={produtos.image} />
+                        <Link href={`/produto/${produtos.id}`}><p>Ver</p></Link>
 
                 </div>
 
